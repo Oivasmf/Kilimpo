@@ -8,7 +8,15 @@ router.post('/', [
     check('marca','Marca é um campo obrigatório.').trim().escape().notEmpty(),
     check('modelo','Modelo é um campo obrigatório.').trim().escape().notEmpty(),
     check('ano').trim().escape().optional(),
-    check('placa', 'Placa é um campo obrigatório.').trim().escape().notEmpty()], (req, res) => {
+    check('placa', 'Placa é um campo obrigatório.').trim().escape().notEmpty(),
+    check('data', 'Selecione uma data válida.').notEmpty().custom(value => {
+        var data = new Date();
+        data = value;
+        if(data.getDay()>0 && data.getDay()<6){
+            return true;
+        } else return false;
+    }),
+    check('horario', 'Selecione um horário.').notEmpty()], (req, res) => {
         const erros = validationResult(req);
         const kilimpo = req.body;
         const contexto = {
@@ -17,11 +25,9 @@ router.post('/', [
         };
         if(!erros.isEmpty()) {
             return res.status(422).json(contexto);
-        }else{
+        } else{
             return res.json(contexto);
         }
     }),
-    check('data', 'Selecione uma data.').notEmpty(),
-    check('horario', 'Selecione um horário.').notEmpty();
 
 module.exports = router;
