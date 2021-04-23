@@ -10,9 +10,8 @@ router.post('/', [
     check('ano').trim().escape().optional(),
     check('placa', 'Placa é um campo obrigatório.').trim().escape().notEmpty(),
     check('data', 'Selecione uma data válida.').notEmpty().custom(value => {
-        var data = new Date();
-        data = value;
-        console.log(data);
+        var data = new Date(value);
+        console.log(data.getDay());
         if(data.getDay()>0 && data.getDay()<6){
             return true;
         } else return false;
