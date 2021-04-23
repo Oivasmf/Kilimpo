@@ -12,6 +12,7 @@ router.post('/', [
     check('data', 'Selecione uma data válida.').notEmpty().custom(value => {
         var data = new Date();
         data = value;
+        console.log('teste');
         if(data.getDay()>0 && data.getDay()<6){
             return true;
         } else return false;
