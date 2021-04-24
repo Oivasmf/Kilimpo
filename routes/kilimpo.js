@@ -8,12 +8,12 @@ router.post('/', [
     check('modelo','Modelo é um campo obrigatório.').trim().escape().notEmpty(),
     check('ano').trim().escape().optional(),
     check('placa', 'Placa é um campo obrigatório.').trim().escape().notEmpty(),
-    check('data', 'Selecione uma data válida.').notEmpty().custom(value => {
+    check('data').notEmpty().custom(value => {
         var data = new Date(value)
         if(data.getDay()>0 && data.getDay()<6){
             return true;
         } else return false;
-    }),
+    }).withMessage('Selecione uma data válida.'),
     check('horario', 'Selecione um horário.').notEmpty()], (req, res) => {
         const erros = validationResult(req);
         const kilimpo = req.body;
