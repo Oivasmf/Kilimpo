@@ -17,6 +17,7 @@ router.post('/', [
     check('horario', 'Selecione um horário.').notEmpty()], (req, res) => {
         const erros = validationResult(req);
         const kilimpo = req.body;
+        console.log("teste");
         const contexto = {
             kilimpo: kilimpo,
             erros: erros.array()
