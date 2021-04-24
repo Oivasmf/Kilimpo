@@ -8,7 +8,7 @@ router.post('/', [
     check('modelo','Modelo é um campo obrigatório.').trim().escape().notEmpty(),
     check('ano').trim().escape().optional(),
     check('placa', 'Placa é um campo obrigatório.').trim().escape().notEmpty(),
-    check('data').notEmpty().custom(value => {
+    check('data').custom(value => {
         var data = new Date(value)
         if(data.getDay()>0 && data.getDay()<6){
             return true;
