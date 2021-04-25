@@ -3,7 +3,7 @@ const { check, body, validationResult } = require('express-validator');
 router.post('/', [
     check('nome','Nome é campo obrigatório.').trim().escape().notEmpty(),
     check('telefone').trim().escape().optional(),
-    check('whatsapp').notEmpty().withMessage('Você deve marcar se possui Whatsapp'),
+    check('whatsapp').optional(),
     check('marca','Marca é um campo obrigatório.').trim().escape().notEmpty(),
     check('modelo','Modelo é um campo obrigatório.').trim().escape().notEmpty(),
     check('ano').trim().escape().optional(),
