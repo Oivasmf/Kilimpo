@@ -17,5 +17,11 @@ Instalar o Node.js:
 7 Clonar os arquivos deste repositório Git para esse mesmo diretório
 8 O arquivo server.js possui a constante port (que por padrão virá com 3389). Você pode alterar para a porta que foi liberada.
 9 Para execução correta do programa, execute simultaneamente o servidor do back-end (configurado acima) e o servidor do front-end (disponível em https://github.com/Oivasmf/Kilimpo-frontend.git).
-  Comando para subir o servidor:	node server.js
+  EXECUÇÃO DO FRONT-END:
+	cd ~/KiLimpo/Kilimpo-frontend
+	yarn start
+
+  EXECUÇÃO DO BACK-END
+	cd ~/KiLimpo/Kilimpo-backend
+	node server.js
 
