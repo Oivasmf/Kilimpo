@@ -11,7 +11,6 @@ router.post('/', [
     check('data').custom(value => {
         var data = new Date(value);
         var data_atual = new Date();
-        data.setHours(23, 59);
 
         console.log(data.getDay()>0 && data.getDay()<6);
         console.log(data_atual.getFullYear()<=data.getFullYear());
@@ -24,8 +23,7 @@ router.post('/', [
         console.log(data.getHours()+":"+data.getMinutes());
         
         if((data.getDay()>0 && data.getDay()<6) && (data_atual.getFullYear()<=data.getFullYear())
-        && (data_atual.getMonth()<=data.getMonth()) && (data_atual.getDate()<data.getDate())){
-
+        && (data_atual.getMonth()<=data.getMonth()) && (data_atual.getDate()<data.getDate()+1)){
             return true;
         } else return false;
     }).withMessage('Selecione uma data válida.'),
