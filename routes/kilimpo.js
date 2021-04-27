@@ -14,7 +14,7 @@ router.post('/', [
         console.log(data.getDay());
 
        
-        if((data.getDay()>0 && data.getDay()<6)){
+        if((data.getDay()>=0 && data.getDay()<5)){
             console.log("Dia da semana:"+data.getDay());
             if(data_atual.getFullYear()==data.getFullYear()){
                 console.log("Ano atual:"+ data_atual.getFullYear()+"| Ano form:"+data.getFullYear());
