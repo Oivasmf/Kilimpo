@@ -1,5 +1,9 @@
 # Kilimpo
 
+Nome do Projeto: Kilimpo-backend
+Nome dos integrantes: Sávio Magalhães Fernandes e Fernando Jacques Peiretti.
+Técnologias utilizadas: Javascript, Express, Node.
+Descrição do Projeto: Servidor back-end que realiza verificação dos campos (nome, telefone, data..) e retorna os erros para o frontend.
 Procedimento de instalação do projeto:
 Criar e configurar uma máquina virtual (para o nosso projeto, foi utilizada uma instância EC2 Ubuntu 20.04.2 LTS), lembrando de liberar acesso nas portas desejadas (para o projeto, foi utilizada a porta 3889).
 
