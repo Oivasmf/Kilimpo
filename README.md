@@ -29,3 +29,4 @@ Instalar o Node.js:
 	cd ~/KiLimpo/Kilimpo-backend
 	node server.js
 
+Observação: Não se esquecer de setar o horário da máquina para america do sul.
