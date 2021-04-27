@@ -11,17 +11,26 @@ router.post('/', [
     check('data').custom(value => {
         var data = new Date(value);
         var data_atual = new Date();
+        console.log(data_atual.getFullYear());
+        console.log(data.getFullYear());
+        console.log(data_atual.getFullYear()<=data.getFullYear());
        
         if((data.getDay()>0 && data.getDay()<6)){
+            console.log("Dia da semana:"+data.getDay());
             if(data_atual.getFullYear()<=data.getFullYear()){
+                console.log("Ano atual:"+ data_atual.getFullYear()+"| Ano form:"+data.getFullYear());
                 if(data_atual.getMonth()<data.getMonth()){
+                    console.log("Mes atual:"+ data_atual.getMonth()+"| Mes form:"+data.getMonth());
                     return true;
                 } else if(data_atual.getMonth()>data.getMonth()){
+                    console.log("ERRO 1");
                     return false;
                 }
-                
+
                 if(data_atual.getMonth()==data.getMonth()){
+                    console.log("ERRO 2");
                     if (data_atual.getDate()<data.getDate()+1){
+                        console.log("Dia atual:"+ data_atual.getDate()+"| Dia form:"+(data.getDate()+1));
                         return true;
                     } else return false;
                 } else return false;
