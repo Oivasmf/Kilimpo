@@ -11,21 +11,9 @@ router.post('/', [
     check('data').custom(value => {
         var data = new Date(value);
         var data_atual = new Date();
-
-        console.log(data.getDay()>0 && data.getDay()<6);
-        console.log(data_atual.getFullYear()<=data.getFullYear());
-        console.log(data_atual.getMonth()<=data.getMonth());
-        console.log(data_atual.getDate()<data.getDate()+1);
-
-        console.log(data_atual.getDate());
-        console.log(data_atual.getHours()+":"+data_atual.getMinutes());
-        console.log(data.getDate()+1);
-        console.log(data.getHours()+":"+data.getMinutes());
-        
+       
         if((data.getDay()>0 && data.getDay()<6) && (data_atual.getFullYear()<=data.getFullYear())
-        && (data_atual.getMonth()<=data.getMonth()) && (data_atual.getDate()<data.getDate()+1)){
-            return true;
-        } else return false;
+        && (data_atual.getMonth()<=data.getMonth()) && (data_atual.getDate()<data.getDate()+1));
     }).withMessage('Selecione uma data válida.'),
     check('horario', 'Selecione um horário.').notEmpty()], (req, res) => {
         const erros = validationResult(req);
