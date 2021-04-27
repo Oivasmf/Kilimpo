@@ -13,7 +13,9 @@ router.post('/', [
         var data_atual = new Date();
        
         if((data.getDay()>0 && data.getDay()<6) && (data_atual.getFullYear()<=data.getFullYear())
-        && (data_atual.getMonth()<=data.getMonth()) && (data_atual.getDate()<data.getDate()+1));
+        && (data_atual.getMonth()<=data.getMonth()) && (data_atual.getDate()<data.getDate()+1)){
+            return true;
+        } else return false;
     }).withMessage('Selecione uma data válida.'),
     check('horario', 'Selecione um horário.').notEmpty()], (req, res) => {
         const erros = validationResult(req);
