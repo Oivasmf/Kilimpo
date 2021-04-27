@@ -16,11 +16,11 @@ router.post('/', [
         console.log(data.getDay()>0 && data.getDay()<6);
         console.log(data_atual.getFullYear()<=data.getFullYear());
         console.log(data_atual.getMonth()<=data.getMonth());
-        console.log(data_atual.getDate()<data.getDate()+1);
+        console.log(data_atual.getDate()<data.getDate());
 
         console.log(data_atual.getDate());
         console.log(data_atual.getHours()+":"+data_atual.getMinutes());
-        console.log(data.getDate()+1);
+        console.log(data.getDate());
         console.log(data.getHours()+":"+data.getMinutes());
         
         if((data.getDay()>0 && data.getDay()<6) && (data_atual.getFullYear()<=data.getFullYear())
