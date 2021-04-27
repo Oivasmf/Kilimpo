@@ -18,9 +18,9 @@ router.post('/', [
         console.log(data_atual.getDate()<data.getDate());
 
         console.log(data_atual.getDate());
-        console.log(data_atual.getHours()+":"+data_atual.getMinutes);
+        console.log(data_atual.getHours()+":"+data_atual.getMinutes());
         console.log(data.getDate());
-        console.log(data.getHours()+":"+data.getMinutes);
+        console.log(data.getHours()+":"+data.getMinutes());
         
         if((data.getDay()>0 && data.getDay()<6) && (data_atual.getFullYear()<=data.getFullYear())
         && (data_atual.getMonth()<=data.getMonth()) && (data_atual.getDate()<data.getDate())){
