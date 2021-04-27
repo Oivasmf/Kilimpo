@@ -11,9 +11,8 @@ router.post('/', [
     check('data').custom(value => {
         var data = new Date(value);
         var data_atual = new Date();
-        console.log(data_atual.getFullYear());
-        console.log(data.getFullYear());
-        console.log(data_atual.getFullYear()<=data.getFullYear());
+        console.log(data.getDay());
+
        
         if((data.getDay()>0 && data.getDay()<6)){
             console.log("Dia da semana:"+data.getDay());
