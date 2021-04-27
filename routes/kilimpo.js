@@ -14,7 +14,7 @@ router.post('/', [
         if(data.getDay()>0 && data.getDay()<6){
             
             console.log(data_atual);
-            console.log(data_atual.getDate()>data.getDate());
+            console.log(data_atual.getDate()<data.getDate());
             console.log(data_atual.getMonth());
             console.log(data_atual.getFullYear());
             return true;
