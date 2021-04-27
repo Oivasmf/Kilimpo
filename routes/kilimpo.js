@@ -12,11 +12,15 @@ router.post('/', [
         var data = new Date(value);
         var data_atual = new Date();
        
-        if((data.getDay()>0 && data.getDay()<6) && (data_atual.getFullYear()<=data.getFullYear())
-        && (data_atual.getMonth()<=data.getMonth()) && (data_atual.getDate()<data.getDate()+1)){
-            return true;
-        } else return false;
-    }).withMessage('Selecione uma data válida.'),
+        if((data.getDay()>0 && data.getDay()<6)){
+            if(data_atual.getFullYear()<=data.getFullYear()){
+                if(data_atual.getMonth()<=data.getMonth()){
+                    if (data_atual.getDate()<data.getDate()+1){
+                        return true;
+                    } else return false;
+                } else return false;
+            } else return false;
+        } else return false;}).withMessage('Selecione uma data válida.'),
     check('horario', 'Selecione um horário.').notEmpty()], (req, res) => {
         const erros = validationResult(req);
         const kilimpo = req.body;
