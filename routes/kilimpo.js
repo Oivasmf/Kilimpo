@@ -11,7 +11,7 @@ router.post('/', [
     check('data').custom(value => {
         var data = new Date(value);
         var data_atual = new Date();
-        data.setHours(23, 59);
+        // data.setHours(23, 59);
 
         console.log(data.getDay()>0 && data.getDay()<6);
         console.log(data_atual.getFullYear()<=data.getFullYear());
