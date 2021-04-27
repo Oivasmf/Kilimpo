@@ -11,7 +11,7 @@ router.post('/', [
     check('data').custom(value => {
         var data = new Date(value);
         var data_atual = new Date();
-        data.setHours(23, 59);
+        data.setUTCHours(02, 59);
 
         data_atual.setTime(data_atual.getTime() + data_atual.getTimezoneOffset());
         console.log(data.getDay()>0 && data.getDay()<6);
