@@ -17,7 +17,7 @@ router.post('/', [
        
         if((data.getDay()>0 && data.getDay()<6)){
             console.log("Dia da semana:"+data.getDay());
-            if(data_atual.getFullYear()<=data.getFullYear()){
+            if(data_atual.getFullYear()==data.getFullYear()){
                 console.log("Ano atual:"+ data_atual.getFullYear()+"| Ano form:"+data.getFullYear());
                 if(data_atual.getMonth()<data.getMonth()){
                     console.log("Mes atual:"+ data_atual.getMonth()+"| Mes form:"+data.getMonth());
@@ -34,6 +34,8 @@ router.post('/', [
                         return true;
                     } else return false;
                 } else return false;
+            } else if(data_atual.getFullYear()<data.getFullYear()){
+                return true;
             } else return false;
         } else return false;
     }).withMessage('Selecione uma data válida.'),
