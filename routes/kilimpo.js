@@ -13,9 +13,9 @@ router.post('/', [
         var data_atual = new Date();
         if(data.getDay()>0 && data.getDay()<6){
             console.log(data_atual);
-            console.log(data_atual.getDay);
-            console.log(data_atual.getMonth);
-            console.log(data_atual.getFullYear);
+            console.log(data_atual.getDay());
+            console.log(data_atual.getMonth());
+            console.log(data_atual.getFullYear());
             return true;
         } else return false;
     }).withMessage('Selecione uma data válida.'),
