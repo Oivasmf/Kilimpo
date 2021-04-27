@@ -14,13 +14,20 @@ router.post('/', [
        
         if((data.getDay()>0 && data.getDay()<6)){
             if(data_atual.getFullYear()<=data.getFullYear()){
-                if(data_atual.getMonth()<=data.getMonth()){
+                if(data_atual.getMonth()<data.getMonth()){
+                    return true;
+                } else if(data_atual.getMonth()>data.getMonth()){
+                    return false;
+                }
+                
+                if(data_atual.getMonth()==data.getMonth()){
                     if (data_atual.getDate()<data.getDate()+1){
                         return true;
                     } else return false;
                 } else return false;
             } else return false;
-        } else return false;}).withMessage('Selecione uma data válida.'),
+        } else return false;
+    }).withMessage('Selecione uma data válida.'),
     check('horario', 'Selecione um horário.').notEmpty()], (req, res) => {
         const erros = validationResult(req);
         const kilimpo = req.body;
